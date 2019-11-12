@@ -21,10 +21,10 @@
 4. Write code that conforms to the existing stylistic and design standards of the Augur project.
 
 ### Use-Case Diagrams:
-1. ![Contributor Occupation](link)
-2. ![Contributor Location](link)
-3. ![Testing Coverage](link)
-4. ![Gender and Ethnic Diversity Among Committers](link)
+1. ![Contributor Occupation](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/customerOccupation.png)
+2. ![Contributor Location](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/customerLocation.png)
+3. ![Testing Coverage](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/testCoverage.png)
+4. ![Gender and Ethnic Diversity Among Committers](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/contributorDiversity.png)
 
 ### Augur Data Needed:
 1. Contributor Occupation:
@@ -52,7 +52,7 @@
 * CSS
 * Javascript
 
-On our team, for each language, there is at least one member who has experience with it.  For those who don’t, beyond asking for help from the other team members, examples of how to use these languages can be found on several sites.  For the front end, Twitter’s Year In Review site demonstrates an easy to decipher and dynamic web design.  For the backend, Augur provides a detailed tutorial on how to create a new metric and endpoint for their API.  Live examples of this can be found on the Augur repo.  By imitating these examples, we will be able to understand and use these languages to contribute to the project.
+On our team, for each language, there is at least one member who has experience with it.  For those who don’t, beyond asking for help from the other team members, examples of how to use these languages can be found on several sites.  For the front end, [Twitter’s Year In Review](https://github.com/twitter/twitter.github.io) site demonstrates an easy to decipher and dynamic web design.  For the backend, Augur provides a [detailed tutorial](https://oss-augur.readthedocs.io/en/master/getting-started/create-a-metric/create-a-metric-toc.html) on how to create a new metric and endpoint for their API.  Live examples of this can be found on the [Augur repo](https://github.com/chaoss/augur/tree/master/augur/metrics).  By imitating these examples, we will be able to understand and use these languages to contribute to the project.
 
 ### Design Document:
 [Github link](https://github.com/computationalmystic/sengfs19-group11/blob/master/Group%2011%20Design%20Doc.pdf)
