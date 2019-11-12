@@ -21,13 +21,13 @@
 4. Write code that conforms to the existing stylistic and design standards of the Augur project.
 
 ### Use-Case Diagrams:
-1. Contributor Occupation
+1. Contributor Occupation <br />
 ![Contributor Occupation](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/customerOccupation.png)
-2. Contributor Location
+2. Contributor Location <br />
 ![Contributor Location](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/customerLocation.png)
-3. Testing Coverage
+3. Testing Coverage <br />
 ![Testing Coverage](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/testCoverage.png)
-4. Gender and Ethnic Diversity Among Committers
+4. Gender and Ethnic Diversity Among Committers <br />
 ![Gender and Ethnic Diversity Among Committers](https://github.com/computationalmystic/sengfs19-group11/blob/master/sprint-1/contributorDiversity.png)
 
 ### Augur Data Needed:
