@@ -1,4 +1,4 @@
-11/14/2019
+11/14/2019  
 Location API:
 - cntrb_id (augur_data.contributors)
 - cntrb_company (augur_data.contributors)
