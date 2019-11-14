@@ -43,7 +43,7 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 		
 	""")
 							    
-	results = pd.read_sql(testing-coverage-SQL>, self.database, params = {‘repo_group_id’: repo_group_id})
+	results = pd.read_sql(testing_coverage_SQL, self.database, params = {‘repo_group_id’: repo_group_id})
 	# output the testing coverage as percentages, one for subroutines tested and one for statements tested
 	return results
 
@@ -57,11 +57,11 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id = repo.repo_id
 		GROUP BY augur_data.repo_test_coverage.repo_id
 	""")
-	results = pd.read_sql(<testing-coverage-SQL>, self.database, params={‘repo_id’: repo_id})
+	results = pd.read_sql(testing_coverage_SQL, self.database, params={‘repo_id’: repo_id})
 	# same as above for outputting percentages
 	return results
 
-server.addRepoGroupMetric(metrics.testing-coverage, ‘testing-coverage’)
+server.addRepoGroupMetric(metrics.testing_coverage, ‘testing-coverage’)
 
 API Documentation
 """
