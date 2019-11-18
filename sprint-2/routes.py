@@ -47,7 +47,7 @@ def create_experimental_routes(server):
 	        ]
 
 	"""
-
+server.addRepoGroupMetric(metrics.testing_coverage,'testing-coverage')
 
 
 
