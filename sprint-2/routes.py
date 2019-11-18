@@ -17,7 +17,34 @@ def create_experimental_routes(server):
 	@apiParam {string} [end_date="current date"] Ending date specification. E.g. values: `2018`, `2018-05`, `2019-05-01`
 	@apiSuccessExample {json} Success-Response:
 		[
-			{
+	                    {
+	                        "repo_id": 21000,
+	                        "repo_name": "rails",
+	                        "date": "2019-01-01T00:00:00.000Z",
+	                        "file_statement_count": 318
+				"file_subroutine_count": 222
+				"file_statements_tested": 300
+				"file_subroutines_tested": 210
+	                    },
+	                    {
+	                        "repo_id": 21002,
+	                        "repo_name": "acts_as_list",
+	                        "date": "2009-01-01T00:00:00.000Z",
+	                        "file_statement_count": 435
+				"file_subroutine_count": 430
+				"file_statements_tested": 354
+				"file_subroutines_tested": 320
+	                    },
+	                    {
+	                        "repo_id": 21002,
+	                        "repo_name": "acts_as_list",
+	                        "date": "2010-01-01T00:00:00.000Z",
+	                        "file_statement_count": 214
+				"file_subroutine_count": 198
+				"file_statements_tested": 321
+				"file_subroutines_tested": 298
+	                    }
+	        ]
 
 	"""
 
