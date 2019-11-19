@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sprint 3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            min-width: 600px;
+        }
+        .row {
+            margin-bottom: 10px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            height: 40px;
+            background-color: black;
+        }
+        
+        .mx-1 h2 {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+        #map {
+            width: 50vw;
+            height: 50vh;
+            
+        }
+        
+        .center {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        p.info {
+            display: none;
+        }
+        
+        .links {
+            text-align: center;
+        }
+        
+        a {
+            text-align: center;
+        }
+        
+        #profile {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<!--
+    <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Portfolio</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+-->
+
+<!--
+<div class="jumbotron">
+  <div class="container text-center">
+  </div>
+</div>
+-->
+  
+    <div class="container px-3 py-3">
+        <div class="row">
+            <div class="col mx-1">
+                <h2 id="apache" onclick="toggleInfo('apache')">Apache</h2>
+                <p id="apacheInfo" class="info">Established in 1999, the ASF is a US 501(c)(3) charitable organization, funded by individual donations and corporate sponsors. Our all-volunteer board oversees more than 350 leading Open Source projects, including Apache HTTP Server -- the world's most popular Web server software.
+                </p>
+                <button class="center">View Contributors</button>
+            </div>
+            <div class="col mx-1"> 
+                <h2 id="chaoss" onclick="toggleInfo('chaoss')">CHAOSS</h2>
+                <p id="chaossInfo" class="info">CHAOSS is a Linux Foundation project focused on creating analytics and metrics to help define community health.</p>
+                <button class="center">View Contributors</button>
+            </div>
+            <div class="col mx-1"> 
+                <h2 id="comcast" onclick="toggleInfo('comcast')">Comcast</h2>
+                <p id="comcastInfo" class="info">Comcast brings together the best in media and technology to create the world's best entertainment and online experiences.</p>
+                <button class="center">View Contributors</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mx-1">
+                <h2 id="graphQL" onclick="toggleInfo('graphQL')">GraphQL</h2>
+                <p id="graphQLInfo" class="info">GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.</p>
+                <button class="center">View Contributors</button>
+            </div>
+            <div class="col mx-1">
+                <h2 id="mhs" onclick="toggleInfo('mhs')">MHS</h2>
+                <p id="mhsInfo" class="info">Mission HydroSci (MHS) is a game-based virtual learning environment that brings innovative game design to middle school science education.</p>
+                <button class="center">View Contributors</button>
+            </div>
+            <div class="col mx-1"> 
+                <h2 id="netflix" onclick="toggleInfo('netflix')">Netflix</h2>
+                <p id="netflixInfo" class="info">Netflix both leverages and provides open source technology focused on providing the leading Internet television network. Our technology focuses on providing immersive experiences across all internet-connected screens. Netflix's deployment technology allows for continuous build and integration into our worldwide deployments serving members in over 50 countries. Our focus on reliability defined the bar for cloud based elastic deployments with several layers of failover. Netflix also provides the technology to operate services responsibly with operational insight, peak performance, and security. We provide technologies for data (persistent & semi-persistent) that serve the real-time load to our 62 million members, as well as power the big data analytics that allow us to make informed decisions on how to improve our service.</p>
+                <button class="center">View Contributors</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mx-1"> 
+                <h2 id="rails" onclick="toggleInfo('rails')">Rails</h2>
+                <p id="railsInfo" class="info">Ruby on Rails, or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, HTML, CSS and JavaScript for user interfacing.</p>
+                <button class="center">View Contributors</button>
+            </div>
+            <div class="col mx-1">
+                <h2 id="senaite" onclick="toggleInfo('senaite')">Senaite</h2>
+                <p id="senaiteInfo" class="info">SENAITE is based on the Content Management System Plone, that has the best security track record of any major CMS. Besides that, SENAITE comes with several mechanisms to prevent members or business associates making accidental or intentional changes that improperly alter or destroy electronic records.</p>
+                <button class="center">View Contributors</button>
+            </div>
+            <div class="col mx-1">
+                <h2 id="zephyr" onclick="toggleInfo('zephyr')">Zephyr</h2>
+                <p id="zephyrInfo" class="info">The Zephyr Project, a Linux Foundation hosted Collaboration Project, is an open source collaborative effort uniting leaders from across the industry to build a best-in-breed small, scalable, real-time operating system (RTOS) optimized for resource-constrained devices, across multiple architectures.</p>
+                <button class="center">View Contributors</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="center"></div>
+<!--
+    <div id="profile">
+        <h4>Contributor Profile</h4>
+        <p>ID:</p>
+        <p>Company:</p>
+        <p>Affiliation:</p>
+        <p>Start Date:</p>
+        <p>GitHub User ID:</p>
+        <p>GitHub URL:</p>
+    </div>
+-->
+    
+    <script>
+        function toggleInfo(repoGroup) {
+            var info = repoGroup + "Info";
+            console.log(info);
+            $("#"+info).toggle();
+        }
+        
+        function initMap() {
+            // The location of Uluru
+            var columbia = {lat: 38.9517, lng: -92.3341};
+            var stl = {lat: 38.6270, lng: -90.1994};
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 1.75, center: columbia});
+                // The marker, positioned at Uluru
+                var locations = new google.maps.Marker(
+                    {position: columbia, map: map},
+                    {position: stl, map: map}
+                );
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABpUwuSkpbHD8OlwLKUTv0I24exEQQReU&callback=initMap"
+    type="text/javascript"></script>
+</body>
+</html>
