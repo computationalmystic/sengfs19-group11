@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="augur.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        #map {
+            width: 50vw;
+            height: 65vh;            
+        }
+        
+        #profile {
+            float: right;
+            padding: 5px;
+            line-height: 50%;
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.html"); 
+        });
+    </script>
+</head>
+<body style="min-width: 600px;">
+    <div id="navbar"></div>
+    <div class="container px-2 py-2">
+        <div class="row">
+            <div class="col mx-1">
+                <h3 id="one">Sample Repository Group One</h3>
+                <button class="center contributors">View Contributors</button>
+            </div>
+            <div class="col mx-1"> 
+                <h3 id="two">Sample Repository Group One</h3>
+                <button class="center contributors">View Contributors</button>
+            </div>
+        </div>
+    
+        <table>
+            <tr>
+                <td>
+                    <div id="map" class="center"></div>
+                </td>
+                <td>
+                    <div id="profile">
+                        <h4>Contributor Profile</h4>
+                        <p id="id">ID:</p>
+                        <p id="company">Company:</p>
+                        <p id="affiliation">Affiliation:</p>
+                        <p id="startDate">Start Date:</p>
+                        <p id="githubUserID">GitHub User ID:</p>
+                        <p id="githubURL">GitHub URL:</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function initMap() {
+            // The location of Uluru
+            var columbia = {lat: 38.9517, lng: -92.3341};
+            var stl = {lat: 38.6270, lng: -90.1994};
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 1.75, center: columbia});
+                // The marker, positioned at Uluru
+                var locations = new google.maps.Marker(
+                    {position: columbia, map: map},
+                    {position: stl, map: map}
+                );
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABpUwuSkpbHD8OlwLKUTv0I24exEQQReU&callback=initMap"
+    type="text/javascript"></script>
+</body>
+</html>
