@@ -1,26 +1,6 @@
-11/14/2019  
-Location API (Map by repo group):
-- cntrb_id (augur_data.contributors)
-- cntrb_company (augur_data.contributors)
-- ca_affiliation (augur_data.contributors_affiliations)
-- ca_start_date (augur_data.contributors_affiliations)
-- cntrb_long (augur_data.contributors)
-- cntrb_lat (augur_data.contributors)
-- gh_user_id (augur_data.contributors)
-- gh_url (augur_data.contributors) 
-
-Visualization: profile card with above data pinned at location
-
-Diversity API (Pie Chart by repo):
-- cmt_author_name (augur_data.commits)  
-/api2/json/gender/{firstName}/{lastName}  
-/api2/json/usRaceEthnicity/{firstName}/{lastName}  
-
-Visualization: two pie charts, gender and ethnicity
-
-Testing Coverage (Gauge by repo):
-- repo_id (augur_data.repo_test_coverage)
-- repo_name (augur_data.repo)
-- repo_git (augur_data.repo)
-
-Visualization: gauge with repo information
+## Michelle
+- Originally had plans for repo groups in augur, but the data had other plans... We discovered that only sample data for three repo groups were available. Therefore, our options were to create a large amount of fake data or implement the three repo groups with existing APIs
+- Before the turn of events, I tranferred previous code to a bootstrap template, gathered logos for the repo groups, and created a layout for the data visualizations to be displayed.
+- Not many changes had to be made design wise at the last minute, just concepts
+- Next steps will be to display repo group and repository information and pinning multiple markers
+- We have the data for these displays but the visualizations took precedence 
