@@ -337,6 +337,33 @@ def create_contributor_routes(server):
     """
     server.addRepoMetric(metrics.top_committers, 'top-committers')
 
+
+    """
+    @api {get} /repo-groups/:repo_group_id/contributor-affiliation Contributor Affiliation (Repo)
+    @apiNames contributor-affiliation
+    @apiGroup Experimental
+    @apiDescription Returns meta data on contributors.
+                    <a href="https://github.com/chaoss/wg-evolution/blob/master/metrics/contributors-new.md">CHAOSS Metric Definition</a>
+    @apiParam {string} repo_group_id Repository Group ID
+    @apiParam {string} repo_id Repository ID.
+    @apiSuccessExample {json} Success-Response:
+                    [
+                        {
+                            "cntrb_email": "s@goggins.com",
+                            "cntrb_company": "University of Missouri & Miner Technologies, LLC",
+                            "cntrb_created_at": "2010-08-29T16:25:48.000Z",
+                            "cntrb_long": null,
+                            "cntrb_lat": null,
+                            "cntrb_location": "Columbia, MO",
+                            "cntrb_state": null,
+                            "cntrb_city": null,
+                            "cntrb_id": 277110
+                        }
+                    ]
+    """
+    server.addRepoGroupMetric(metrics.contributor_affiliation,'contributor-affiliation')
+
+
     server.addRepoGroupMetric(metrics.contributors_code_development, 'contributors-code-development')
 
     server.addRepoMetric(metrics.contributors_code_development, 'contributors-code-development')

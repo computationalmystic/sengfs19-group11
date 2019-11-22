@@ -100,3 +100,19 @@ def create_commit_routes(server):
     """
     server.addRepoMetric(metrics.annual_commit_count_ranked_by_repo_in_repo_group,'annual-commit-count-ranked-by-repo-in-repo-group')
 
+    """
+    @api {get} /repo-groups/:repo_group_id/committer-data Committer Data (Repo Group)
+    @apiName committer-data
+    @apiGroup Experimental
+    @apiDescription This is an Augur-specific metric. We are currently working to define these more formally. Source: Git Repository
+    @apiParam {String} repo_url_base Base64 version of the URL of the GitHub repository as it appears in the Facade DB
+    @apiSuccessExample {json} Success-Response:
+                        [
+                            {
+                                "cmt_author_name": ,
+	                            "cmt_author_affiliation": ,
+                                "repo_id":
+                            }
+                        ]
+    """
+    server.addRepoGroupMetric(metrics.committer_data,'committer-data')
