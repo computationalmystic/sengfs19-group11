@@ -343,21 +343,18 @@ def create_contributor_routes(server):
     @apiNames contributor-affiliation
     @apiGroup Experimental
     @apiDescription Returns meta data on contributors.
-                    <a href="https://github.com/chaoss/wg-evolution/blob/master/metrics/contributors-new.md">CHAOSS Metric Definition</a>
     @apiParam {string} repo_group_id Repository Group ID
-    @apiParam {string} repo_id Repository ID.
     @apiSuccessExample {json} Success-Response:
                     [
                         {
-                            "cntrb_email": "s@goggins.com",
+                            "cntrb_id": 277110,
                             "cntrb_company": "University of Missouri & Miner Technologies, LLC",
                             "cntrb_created_at": "2010-08-29T16:25:48.000Z",
-                            "cntrb_long": null,
-                            "cntrb_lat": null,
                             "cntrb_location": "Columbia, MO",
-                            "cntrb_state": null,
-                            "cntrb_city": null,
-                            "cntrb_id": 277110
+                            "gh_login": "sgoggins",
+                            "gh_html_url": "https://github.com/sgoggins",
+                            "lat": 38.9517053,
+                            "lng": -92.3340724
                         }
                     ]
     """

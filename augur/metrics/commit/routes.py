@@ -104,14 +104,16 @@ def create_commit_routes(server):
     @api {get} /repo-groups/:repo_group_id/committer-data Committer Data (Repo Group)
     @apiName committer-data
     @apiGroup Experimental
-    @apiDescription This is an Augur-specific metric. We are currently working to define these more formally. Source: Git Repository
-    @apiParam {String} repo_url_base Base64 version of the URL of the GitHub repository as it appears in the Facade DB
+    @apiDescription Returns information on contributors to a repo group, including a prediction of their gender.
+    @apiParam {String} repo_group_id Repository Group ID
     @apiSuccessExample {json} Success-Response:
                         [
                             {
-                                "cmt_author_name": ,
-	                            "cmt_author_affiliation": ,
-                                "repo_id":
+                                "cmt_author_name": "Sean P. Goggins",
+                                "cmt_author_affiliation": "NULL",
+                                "repo_id": 25432,
+                                "gender": "male",
+                                "prob": -1
                             }
                         ]
     """
