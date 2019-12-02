@@ -1,7 +1,7 @@
 # Sprint 3
 
-To view the website work completed for sprint 3, you can go to https://ssample812.github.io/sengfs19-group11.github.io/home .
-To view the api work completed for sprint 3, you can go to http://129.114.16.76:5000/api/unstable/repo-groups/10/contributor-affiliation and http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data ("20" within these links can be substitued for 10, the other sample repo group in the sample data)
+- To view the website work completed for sprint 3, you can go to https://ssample812.github.io/sengfs19-group11.github.io/home .
+- To view the api work completed for sprint 3, you can go to http://129.114.16.76:5000/api/unstable/repo-groups/10/contributor-affiliation and http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data ("20" within these links can be substitued for 10, the other sample repo group in the sample data)
 
 
 ## Michelle
