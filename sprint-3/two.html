@@ -10,49 +10,16 @@
             $("#navbar").load("navbar.html"); 
         });
     </script>
+    <script src="committerData.js"></script>
     <script type="text/javascript">
         google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var genderData = google.visualization.arrayToDataTable([
-                ['Gender', 'Percentage'],
-                ['Male', 50],
-                ['Female', 50]
-            ]);
-            
-            var ethnicityData = google.visualization.arrayToDataTable([
-                ['Ethnicity', 'Percentage'],
-                ['American Indian or Alaska Native', 50],
-                ['Asian', 50],
-                ['Black or African American', 50],
-                ['Hispanic or Latino', 50],
-                ['Native Hawaiian or Other Pacific Islander', 50],
-                ['White', 50],
-            ]);
-
-            var options = {
-                is3D: true
-            };
-
-            var gender = new google.visualization.PieChart(document.getElementById('gender'));
-            gender.draw(genderData, options);
-            var ethnicity = new google.visualization.PieChart(document.getElementById('ethnicity'));
-            ethnicity.draw(ethnicityData, options);
-            
-            function getRepo() {
-                var repo = document.getElementById("repo").value();
-                console.log(repo);
-            }
-        }
+        google.charts.setOnLoadCallback(getCommData(20));
     </script>
 </head>
 <body>
     <div id="navbar"></div>
      <div class="container center">
          <h3 class="header">Sample Repository Group Two</h3>
-        <select id="repo" class="center" onchange="getRepo()">
-            <option>Select a Repository</option>
-        </select>
          <br>
         <table>
             <colgroup>
@@ -85,17 +52,14 @@
         </table>
         <a href="ethnicities.html" target="_blank"><p>Definitions for Racial and Ethnic Categories</p></a>
         
-        <table class="dataTable">
+        <table class="dataTable" id="table">
             <tr>
                 <th class="dataTable">Contributor Name</th>
                 <th class="dataTable">Gender Prediction</th>
                 <th class="dataTable">Ethnicity Prediction</th>
             </tr>
-            <tr>
-                <td class="dataTable">Name</td>
-                <td class="dataTable">Gender</td>
-                <td class="dataTable">Ethnicity</td>
-            </tr>
+            <tbody>
+            </tbody>
         </table>
         <div class="container">
         </div>
