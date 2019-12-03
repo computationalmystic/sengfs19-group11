@@ -267,7 +267,7 @@ def committer_data(self, repo_group_id, repo_id=None, period='all', begin_date=N
         name = row['cmt_author_name']
         dividedName = name.split(" ")
 
-        len(dividedName) == 2:
+        if len(dividedName) == 2:
             r = requests.get(genderURL + name, headers=headers)
             rjson = r.json()
             gender.append(rjson['likelyGender'])
