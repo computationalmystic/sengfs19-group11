@@ -50,13 +50,15 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 	if not repo_id:
 		testing_coverage_SQL = s.sql.text("""
 		SELECT
-			augur_data.repo_test_coverage.repo_id,
-			augur_data.repo_test_coverage.file_subroutines_tested,
-			augur_data.repo_test_coverage.file_subroutine_count,
-			augur_data.repo_test_coverage.file_statements_tested,
-			augur_data.repo_test_coverage.file_statement_count
-		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id = repo.repo_id
-		GROUP BY augur_data.repo_test_coverage.repo_id
+			repo_test_coverage.repo_id,
+			repo_test_coverage.file_subroutines_tested,
+			repo_test_coverage.file_subroutine_count,
+			repo_test_coverage.file_statements_tested,
+			repo_test_coverage.file_statement_count
+		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id in (SELECT repo_id
+													  	FROM augur_data.repo
+														WHERE repo_group_id = :repo_id)
+		GROUP BY repo_test_coverage.repo_id
 	
 		
 		""")
@@ -72,7 +74,9 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 			augur_data.repo_test_coverage.file_subroutine_count,
 			augur_data.repo_test_coverage.file_statements_tested,
 			augur_data.repo_test_coverage.file_statement_count
-		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id = repo.repo_id
+		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id in (SELECT repo_id
+													  	FROM augur_data.repo
+														WHERE repo_group_id = :repo_id) 
 		GROUP BY augur_data.repo_test_coverage.repo_id
 		""")
 		results = pd.read_sql(testing_coverage_SQL, self.database, params={'repo_id': repo_id})
