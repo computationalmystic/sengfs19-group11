@@ -60,7 +60,3 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 	results = pd.read_sql(testing_coverage_SQL, self.database, params={‘repo_id’: repo_id})
 	# same as above for outputting percentages
 	return results
-
-						    
-
-
