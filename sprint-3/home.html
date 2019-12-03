@@ -22,6 +22,7 @@
             border: 1px solid black;
         }
     </style>
+    <script src="contributorData.js"></script>
     <script>
         $(function(){
             $("#navbar").load("navbar.html"); 
@@ -35,11 +36,11 @@
         <div class="row">
             <div class="col mx-1">
                 <h3 id="one">Sample Repository Group One</h3>
-                <button class="center contributors">View Contributors</button>
+                <button type="submit" onclick="getContrData(10)" class="center contributors">View Contributors</button>
             </div>
             <div class="col mx-1"> 
                 <h3 id="two">Sample Repository Group Two</h3>
-                <button class="center contributors">View Contributors</button>
+                <button type="submit" onclick="getContrData(20)" class="center contributors">View Contributors</button>
             </div>
         </div>
     

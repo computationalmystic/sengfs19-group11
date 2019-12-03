@@ -252,21 +252,42 @@ def committer_data(self, repo_group_id, repo_id=None, period='all', begin_date=N
 
         results = pd.read_sql(contributorsSQL, self.database, params={'repo_group_id': repo_group_id, 'period': period,
                                                                 'begin_date': begin_date, 'end_date': end_date})
+    
     headers = {
         'X-API-KEY': 'a978daf0d0bae32c8377c1613db4a22b'
     }
-    url = "https://v2.namsor.com/NamSorAPIv2/api2/json/genderFull/"
+    genderURL = "https://v2.namsor.com/NamSorAPIv2/api2/json/genderFull/"
+    ethURL = "https://v2.namsor.com/NamSorAPIv2/api2/json/usRaceEthnicity/"
     gender = []
-    prob = []
+    genderProb = []
+    eth = []
+    ethProb = []
 
     for _, row in results.iterrows():
-        r = requests.get(url + row['cmt_author_name'], headers=headers)
-        rjson = r.json()
-        gender.append(rjson['likelyGender'])
-        prob.append(rjson['genderScale'])
+        name = row['cmt_author_name']
+        dividedName = name.split(" ")
+
+        if len(dividedName) == 2:
+            r = requests.get(genderURL + name, headers=headers)
+            rjson = r.json()
+            gender.append(rjson['likelyGender'])
+            genderProb.append(rjson['genderScale'])
+
+            r = requests.get(ethURL + dividedName[0] + "/" + dividedName[1], headers=headers)
+            rjson = r.json()
+            eth.append(rjson['raceEthnicity'])
+            ethProb.append(rjson['probabilityCalibrated'])
+
+        else:
+            gender.append('null')
+            genderProb.append(0)
+            eth.append('null')
+            ethProb.append(0)
 
     results['gender'] = gender
-    results['prob'] = prob
+    results['genderProb'] = genderProb
+    results['eth'] = eth
+    results['ethProb'] = ethProb
         
     return results
 
