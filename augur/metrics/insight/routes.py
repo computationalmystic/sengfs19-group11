@@ -41,8 +41,6 @@ def create_insight_routes(server):
     """
     server.addRepoGroupMetric(metrics.top_insights, 'top-insights')
 
-def create_experimental_routes(server):
-    metrics = server._augur.metrics
 	
     """
     API Documentation
