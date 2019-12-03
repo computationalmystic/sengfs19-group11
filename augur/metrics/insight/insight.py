@@ -57,7 +57,7 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 			repo_test_coverage.file_statement_count
 		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id in (SELECT repo_id
 													  	FROM augur_data.repo
-														WHERE repo_group_id = :repo_id)
+														WHERE repo_group_id = :repo_group_id)
 		GROUP BY repo_test_coverage.repo_id
 	
 		
@@ -76,7 +76,7 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 			augur_data.repo_test_coverage.file_statement_count
 		FROM augur_data.repo_test_coverage JOIN augur_data.repo on repo_test_coverage.repo_id in (SELECT repo_id
 													  	FROM augur_data.repo
-														WHERE repo_group_id = :repo_id) 
+														WHERE repo_group_id = :repo_group_id) 
 		GROUP BY augur_data.repo_test_coverage.repo_id
 		""")
 		results = pd.read_sql(testing_coverage_SQL, self.database, params={'repo_id': repo_id})
