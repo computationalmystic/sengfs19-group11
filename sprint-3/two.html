@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample Repository Group Two</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.html"); 
+        });
+    </script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var genderData = google.visualization.arrayToDataTable([
+                ['Gender', 'Percentage'],
+                ['Male', 50],
+                ['Female', 50]
+            ]);
+            
+            var ethnicityData = google.visualization.arrayToDataTable([
+                ['Ethnicity', 'Percentage'],
+                ['American Indian or Alaska Native', 50],
+                ['Asian', 50],
+                ['Black or African American', 50],
+                ['Hispanic or Latino', 50],
+                ['Native Hawaiian or Other Pacific Islander', 50],
+                ['White', 50],
+            ]);
+
+            var options = {
+                is3D: true
+            };
+
+            var gender = new google.visualization.PieChart(document.getElementById('gender'));
+            gender.draw(genderData, options);
+            var ethnicity = new google.visualization.PieChart(document.getElementById('ethnicity'));
+            ethnicity.draw(ethnicityData, options);
+            
+            function getRepo() {
+                var repo = document.getElementById("repo").value();
+                console.log(repo);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+     <div class="container center">
+         <h3 class="header">Sample Repository Group Two</h3>
+        <select id="repo" class="center" onchange="getRepo()">
+            <option>Select a Repository</option>
+        </select>
+         <br>
+        <table>
+            <colgroup>
+                <col width="33%">
+                <col width="33%">
+                <col width="33%">
+            </colgroup>
+            <tr>
+                <th>
+                    <h5>Gender Distribution</h5>
+                </th>
+                <th>
+                    <h5>Ethnicity Distribution</h5>
+                </th>
+                <th>
+                    <h5>Testing Coverage</h5>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div id="gender" class="center piechart"></div>
+                </td>
+                <td>
+                    <div id="ethnicity" class="center piechart"></div>
+                </td>
+                <td>
+                    <meter min="0" low="40" high="90" max="100" value="95" class="center"></meter>
+                </td>
+            </tr>
+        </table>
+        <a href="ethnicities.html" target="_blank"><p>Definitions for Racial and Ethnic Categories</p></a>
+        
+        <table class="dataTable">
+            <tr>
+                <th class="dataTable">Contributor Name</th>
+                <th class="dataTable">Gender Prediction</th>
+                <th class="dataTable">Ethnicity Prediction</th>
+            </tr>
+            <tr>
+                <td class="dataTable">Name</td>
+                <td class="dataTable">Gender</td>
+                <td class="dataTable">Ethnicity</td>
+            </tr>
+        </table>
+        <div class="container">
+        </div>
+        
+    </div>
+</body>
+</html>

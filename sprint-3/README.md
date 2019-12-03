@@ -1,26 +1,20 @@
-11/14/2019  
-Location API:
-- cntrb_id (augur_data.contributors)
-- cntrb_company (augur_data.contributors)
-- ca_affiliation (augur_data.contributors_affiliations)
-- ca_start_date (augur_data.contributors_affiliations)
-- cntrb_long (augur_data.contributors)
-- cntrb_lat (augur_data.contributors)
-- gh_user_id (augur_data.contributors)
-- gh_url (augur_data.contributors) 
+# Sprint 3
 
-Visualization: profile card with above data pinned at location
+- To view the website work completed for sprint 3, you can go to https://ssample812.github.io/sengfs19-group11.github.io/home .
+- To view the api endpoints completed for sprint 3, you can go to http://129.114.16.76:5000/api/unstable/repo-groups/10/contributor-affiliation and http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data ("20" within these links can be substitued for 10, the other sample repo group in the sample data)
 
-Diversity API:
-- cmt_author_name (augur_data.commits)  
-/api2/json/gender/{firstName}/{lastName}  
-/api2/json/usRaceEthnicity/{firstName}/{lastName}  
+** Work is currently being done to dynamically update the website with data front our API
 
-Visualization: two pie charts, gender and ethnicity
+## Michelle
+- Originally had plans for repo groups in augur, but the data had other plans... We discovered that only sample data for three repo groups were available. Therefore, our options were to create a large amount of fake data or implement the three repo groups with existing APIs
+- Before the turn of events, I tranferred previous code to a bootstrap template, gathered logos for the repo groups, and created a layout for the data visualizations to be displayed.
+- Not many changes had to be made design wise at the last minute, just concepts
+- Next steps will be to display repo group and repository information, pinning multiple markers, and changing the meter gauge to a circular format
+- We have the data for these displays but the visualizations took precedence 
 
-Testing Coverage:
-- repo_id (augur_data.repo_test_coverage)
-- repo_name (augur_data.repo)
-- repo_git (augur_data.repo)
-
-Visualization: gauge with repo information
+## Samantha
+For this sprint, I produced two working API endpoints: committer-data and contributor-affiliations.  I also create function and route tests for each new metric.  This code can be found in the the "augur/metrics/contributor" and "augur/metrics/commit" folders.
+### committer-data:
+This metric mainly returns the unique full names of all the contributors in a repo group, including a prediction of the person's gender.  This prediction is created by iterating through the SQL response and calling the NamSor API on each name.  This new data is appended to the response and then supplied to the endpoint.  This will be used to illustrate the possible gender distribution of the committers to a repository group.  [Try it out here.](http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data)
+### contributor-affiliation:
+This metric returns information on the contributors to a repo group, including their github username, profile url, company affiliation, and location.  Using the location information and the Google Geocoding API, latitude and longitude corrdinates for the user are generated for use with the map visualization.  These results are appended to the SQL response and then supplied to the endpoint.  This will be used to give descriptions on the contributors to a repository group.  [Try it out here.](http://129.114.16.76:5000/api/unstable/repo-groups/20/contributor-affiliation)

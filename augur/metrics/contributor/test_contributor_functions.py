@@ -51,3 +51,5 @@ def test_committer(metrics):
     assert metrics.committers(21,period='year').iloc[0]['count'] > 100
     assert metrics.committers(20,21000,period='year').iloc[0]['count'] > 100
 
+def test_contributor_affiliation(metrics):
+    assert metrics.contributor_affiliation(20,period='year').iloc[0].lat > 38

@@ -100,3 +100,21 @@ def create_commit_routes(server):
     """
     server.addRepoMetric(metrics.annual_commit_count_ranked_by_repo_in_repo_group,'annual-commit-count-ranked-by-repo-in-repo-group')
 
+    """
+    @api {get} /repo-groups/:repo_group_id/committer-data Committer Data (Repo Group)
+    @apiName committer-data
+    @apiGroup Experimental
+    @apiDescription Returns information on contributors to a repo group, including a prediction of their gender.
+    @apiParam {String} repo_group_id Repository Group ID
+    @apiSuccessExample {json} Success-Response:
+                        [
+                            {
+                                "cmt_author_name": "Sean P. Goggins",
+                                "cmt_author_affiliation": "NULL",
+                                "repo_id": 25432,
+                                "gender": "male",
+                                "prob": -1
+                            }
+                        ]
+    """
+    server.addRepoGroupMetric(metrics.committer_data,'committer-data')
