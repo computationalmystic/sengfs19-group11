@@ -1,6 +1,7 @@
 # Sprint 3
 
-- To view the website work completed for sprint 3, you can go to https://ssample812.github.io/sengfs19-group11.github.io/home .
+- To view the website work completed for sprint 3, you can clone our repository and view the website through your localhost.  The files in this "Sprint 3" folder are the only ones necessary.  The website is also deployed using Github pages at https://ssample812.github.io/sengfs19-group11.github.io/ , however, since Github pages requires API calls to be over HTTPS and Augur uses HTTP, the graphs will not populate.
+
 - To view the api endpoints completed for sprint 3, you can go to http://129.114.16.76:5000/api/unstable/repo-groups/10/contributor-affiliation and http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data ("20" within these links can be substitued for 10, the other sample repo group in the sample data)
 
 ** Work is currently being done to dynamically update the website with data front our API
