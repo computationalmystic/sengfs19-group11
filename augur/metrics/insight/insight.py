@@ -32,7 +32,7 @@ def top_insights(self, repo_group_id, num_repos=6):
     return results
 
 @annotate(tag='testing-coverage')
-def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_date=None, end_date=None):
+def testing_coverage(self, repo_group_id, repo_id=None, period='day', begin_date=None, end_date=None):
 	"""
 	<the metric analzyes how much a repository is tested>
 	:parameter repo_group_id: The repository’s group id
@@ -45,7 +45,6 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 	if not end_date:
 		end_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
-	testing_coverage_SQL = ' '
 							    
 	if not repo_id:
 		testing_coverage_SQL = s.sql.text("""
@@ -63,7 +62,7 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 		
 		""")
 							    
-		results = pd.read_sql(testing_coverage_SQL, self.database, params = {'repo_group_id': repo_group_id})
+		results = pd.read_sql(testing_coverage_SQL, self.database, params={'repo_group_id': repo_group_id, 'period': period, 'begin_date': begin_date, 'end_date': end_date})
 		# output the testing coverage as percentages, one for subroutines tested and one for statements tested
 		return results
 
@@ -79,7 +78,7 @@ def testing_coverage(self, repo_group_id, repo_id = 'None', period='day', begin_
 														WHERE repo_group_id = :repo_group_id) 
 		GROUP BY augur_data.repo_test_coverage.repo_id
 		""")
-		results = pd.read_sql(testing_coverage_SQL, self.database, params={'repo_id': repo_id})
+		results = pd.read_sql(testing_coverage_SQL, self.database, params={'repo_id': repo_id, 'period': period, 'begin_date': begin_date, 'end_date': end_date})
 		# same as above for outputting percentages
 		return results
 
