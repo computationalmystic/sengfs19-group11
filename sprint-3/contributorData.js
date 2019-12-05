@@ -12,7 +12,22 @@ function getContrData(group) {
             var data = JSON.parse(this.responseText);
             console.log(data);
             
-            // UPDATE TABLE HERE
+            var locations = [];
+            
+            for(let i = 0; i < data.length; i++) {
+                if(data[i].lat && data[i].lng) {
+                    var latitude = data[i].lat;
+                    var longitude = data[i].lng;
+                    var coordinates = {
+                        lat: latitude,
+                        lng: longitude
+                    };
+                    console.log(coordinates);
+                    locations.push(coordinates);
+                }
+            }
+            console.log(locations);
+            return locations;
         } 
     };
 
