@@ -86,6 +86,7 @@ function getCommData(group) {
                 is3D: true
             };
             
+            document.getElementById('load').innerHTML = '';
             var gender = new google.visualization.PieChart(document.getElementById('gender'));
             gender.draw(genderData, options);
             var ethnicity = new google.visualization.PieChart(document.getElementById('ethnicity'));
