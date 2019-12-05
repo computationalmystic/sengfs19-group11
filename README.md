@@ -3,7 +3,6 @@
 branch | status
    --- | ---
 master | [![Build Status](https://travis-ci.org/chaoss/augur.svg?branch=master)](https://travis-ci.org/chaoss/augur)
-   dev | [![Build Status](https://travis-ci.org/chaoss/augur.svg?branch=dev)](https://travis-ci.org/chaoss/augur)
 
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2788/badge)](https://bestpractices.coreinfrastructure.org/projects/2788)
 
@@ -20,23 +19,35 @@ Functionally, Augur is a prototyped implementation of the Linux Foundation's [CH
 Note: we currently only support (most) UNIX systems. If you would like to use Augur but only have access to a non-Unix system, we recommend setting up an Ubuntu 18.04 VM if you can. 
 If this is not feasible for you, please reach out to us at [p9j0r6s0m4a0t8v5@augurlabs.slack.com](mailto:p9j0r6s0m4a0t8v5@augurlabs.slack.com) and we will try to help you come up with a solution. In the meantime, if you have Windows and feel so inclined check out issue [#403](https://github.com/chaoss/augur/issues/403) as a starting point until we can finalize a Windows installation.
 
-## Data Collection
+## Group 11 - Final Project
 
-Please [follow the instructions](https://oss-augur.readthedocs.io/en/master/getting-started/usage.html#db) for collecting data about specific repositories of interest. We are also currently working on putting together an easily distributable sample database to enable people to get going faster.
+For our project, we created three new API endpoints: [contributor-affiliation](http://129.114.16.76:5000/api/unstable/repo-groups/20/contributor-affiliation), [committer-data](http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data), and [testing-coverage](http://129.114.16.76:5000/api/unstable/repo-groups/20/testing-data).  We also created a website to view these new metrics, at http://129.114.16.76:8080/home.html .
 
-<!-- TODO: link to worker docs once they're done -->
-<!-- If you are collecting data of your own, you must [start up the workers](./docs/setup/augur-get-workers-going.md). -->
+### Installation 
+1. Clone this repository into a local directory using `git clone https://github.com/computationalmystic/sengfs19-group11.git`
+2. Follow the 'Getting Started' guide in the Augur [documentation](https://oss-augur.readthedocs.io/en/master/getting-started/getting-started-toc.html) to set up out Augur version, stopping before `make install`.
+3. Ensure your virtual environment has been activated and uses python 3.
+4. Run `pip uninstall gunicorn`, then run `pip install gunicorn==19.9.0`.
+5. Run `make install`, opting to install the database schema, load the sample data, and not install front-end dependencies.
+6. Using the database created following Augur's installation guide, enter into the database using `psql`, and add new data into the database using the commands `insert into augur_data.repo_test_coverage(repo_id, file_subroutines_tested, file_subroutine_count, file_statements_tested, file_statement_count) values (25430, 124, 154, 254, 304)` and `insert into augur_data.repo_test_coverage(repo_id, file_subroutines_tested, file_subroutine_count, file_statements_tested, file_statement_count) values (25432, 354, 354, 463, 602)`
+7. Run `make install` again
+8. To start the API server, run `augur run --no-enable-housekeeper`
 
-If you have any issues, please feel free to request to email straight into our slack channel [p9j0r6s0m4a0t8v5@augurlabs.slack.com](mailto:p9j0r6s0m4a0t8v5@augurlabs.slack.com) for new developer support!!
+You may now access your API endpoints on your localhost at port 5000, for instance using http://localhost:5000/api/unstable/repo-groups/20/committer-data 
 
-## Contributing
-----------------
+1. In a separate terminal windown, naviage into /sengfs19-group11/website
+2. Ensure your virtual environment is activated.
+3. run `python3 server.py`
 
-To contribute to Augur, please follow the guidelines found in our [CONTRIBUTING.md](CONTRIBUTING.md) and our [Code of Conduct](CODE_OF_CONDUCT.md). Augur is a welcoming development community that is open to anyone and everyone of every skill level!
+You may now access your website at http://localhost:8080/home.html
 
-Check out our [documentation](https://oss-augur.readthedocs.io/en/documentation/) for information about our system.
-
-Please note we require all commits to be signed off with a [Developer Certificate of Origin](https://developercertificate.org/) in accordance with the [CHAOSS Project Charter section 8.2.1](https://chaoss.community/about/charter/#user-content-8-intellectual-property-policy). This can be easily done by using the `-s` flag when using `git commit`, e.g. `git commit -s -m "Update README.md"`. **Any pull request containing commits that are not signed off will not be eligible for merge until all commits are signed off.** 
+### Changed/Added Files
+1. created `/website` directory and all contained files 
+2. changed `commit.py`, `routes.py`, `test_commit_functions.py`, and `test_commit_routes.py` in `/augur/metrics/commit` directory
+3. changed `contributor.py`, `routes.py`, `test_contributor_functions.py`, and `test_contributor_routes.py` in `/augur/metrics/contributor` directory
+4. changed `insight.py`, `routes.py`, `test_insight_functions.py`, and `test_insight_routes.py` in `/augur/metrics/insight` directory
+5. created `sprint-1`, `sprint-2`, `sprint-3`, and `sprint-4`directories containing all class materials
+6. created `Group 11 Design Doc.pdf`
 
 ## License, Copyright, and Funding
 ----------------
