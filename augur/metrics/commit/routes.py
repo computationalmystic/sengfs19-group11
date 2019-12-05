@@ -109,11 +109,13 @@ def create_commit_routes(server):
     @apiSuccessExample {json} Success-Response:
                         [
                             {
-                                "cmt_author_name": "Sean P. Goggins",
+                                "cmt_author_name": "Alberto Martín",
                                 "cmt_author_affiliation": "NULL",
-                                "repo_id": 25432,
+                                "repo_id": 25431,
                                 "gender": "male",
-                                "prob": -1
+                                "genderProb": -0.9371237245,
+                                "eth": "HL",
+                                "ethProb": 0.8202765757
                             }
                         ]
     """
