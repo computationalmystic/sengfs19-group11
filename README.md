@@ -53,6 +53,9 @@ You may now access your website at http://localhost:8080/home.html
 #### Back End
 
 #### Front End
+1. The maps should populate with pins at contributor locations when opening the home page. Locations can be confirmed by viewing the contributors' city in the location API.
+2. The pie charts and table in each repo group will appear after a load time. This can again be confirmed by comparing the diversity API against the table.
+3. The testing coverage meters are easily checked with doing a percentage calculation from the API.
 
 ## License, Copyright, and Funding
 ----------------
