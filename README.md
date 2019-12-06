@@ -12,13 +12,6 @@ Augur is focused on prototyping open source software metrics.
 
 Functionally, Augur is a prototyped implementation of the Linux Foundation's [CHAOSS Project](http://chaoss.community) on [open source software metrics](https://github.com/chaoss/metrics). Technically, Augur is a [Flask web application](http://augur.osshealth.io), [Python library](https://oss-augur.readthedocs.io/en/dev/library-documentation/python.html) and [REST server](http://augur.osshealth.io/static/api_docs/) that presents metrics on open source software development project health and sustainability.
 
-## Getting Started
-
-**Please follow the 'Getting Started' guide in our [documentation](https://oss-augur.readthedocs.io/en/master/getting-started/getting-started-toc.html).**
-
-Note: we currently only support (most) UNIX systems. If you would like to use Augur but only have access to a non-Unix system, we recommend setting up an Ubuntu 18.04 VM if you can. 
-If this is not feasible for you, please reach out to us at [p9j0r6s0m4a0t8v5@augurlabs.slack.com](mailto:p9j0r6s0m4a0t8v5@augurlabs.slack.com) and we will try to help you come up with a solution. In the meantime, if you have Windows and feel so inclined check out issue [#403](https://github.com/chaoss/augur/issues/403) as a starting point until we can finalize a Windows installation.
-
 ## Group 11 - Final Project
 
 For our project, we created three new API endpoints: [contributor-affiliation](http://129.114.16.76:5000/api/unstable/repo-groups/20/contributor-affiliation), [committer-data](http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data), and [testing-coverage](http://129.114.16.76:5000/api/unstable/repo-groups/20/testing-data).  We also created a website to view these new metrics, at http://129.114.16.76:8080/home.html .
@@ -53,11 +46,12 @@ You may now access your website at http://localhost:8080/home.html
 #### Back End
 Function and route tests were written for all three new metrics.  To verify your functions are working correctly:
 1. Activate your virtual environment (ex: `source augur_env/bin/activate`)
-2. Navigate into the `sengfs19-group11` directory
-3. Run the tests for your desired metric:
+2. Run `pip install pytest-timeout`
+3. Navigate into the `sengfs19-group11` directory
+4. Run the tests for your desired metric:
 - committer-data: 
 1. `pytest augur/metrics/commit/test_commit_functions.py::test_committer_data`
-2. 
+2. `pytest augur/metrics/commit/test_commit_routes.py::test_committer_data --timeout=300`
 - contributor-affiliation:
 1. `pytest augur/metrics/contributor/test_contributor_functions.py::test_contributor_affiliation`
 2. `pytest augur/metrics/contributor/test_contributor_routes.py::test_contributor_affiliation`
