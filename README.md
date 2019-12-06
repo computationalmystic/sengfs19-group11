@@ -42,12 +42,17 @@ You may now access your API endpoints on your localhost at port 5000, for instan
 You may now access your website at http://localhost:8080/home.html
 
 ### Changed/Added Files
-1. created `/website` directory and all contained files 
-2. changed `commit.py`, `routes.py`, `test_commit_functions.py`, and `test_commit_routes.py` in `/augur/metrics/commit` directory
-3. changed `contributor.py`, `routes.py`, `test_contributor_functions.py`, and `test_contributor_routes.py` in `/augur/metrics/contributor` directory
-4. changed `insight.py`, `routes.py`, `test_insight_functions.py`, and `test_insight_routes.py` in `/augur/metrics/insight` directory
-5. created `sprint-1`, `sprint-2`, `sprint-3`, and `sprint-4`directories containing all class materials
-6. created `Group 11 Design Doc.pdf`
+1. created `/website` directory to house the code for our front end, which contains `home.html`, `one.html`, `two.html`, `ethnicities.html`, `navbar.html`, `augur.css`, `testData.js`, `contributorData.js`, `committerData.js`, and `server.py`
+2. changed `commit.py`, `routes.py`, `test_commit_functions.py`, and `test_commit_routes.py` in `/augur/metrics/commit` directory to add the committer-data API endpoint
+3. changed `contributor.py`, `routes.py`, `test_contributor_functions.py`, and `test_contributor_routes.py` in `/augur/metrics/contributor` directory to add the contributor-affiliation API endpoint
+4. changed `insight.py`, `routes.py`, `test_insight_functions.py`, and `test_insight_routes.py` in `/augur/metrics/insight` directory to add the testing-coverage API endpoint
+5. created `sprint-1`, `sprint-2`, `sprint-3`, and `sprint-4`directories to contain all class materials
+6. created `Group 11 Design Doc.pdf` 
+
+### Testing
+#### Back End
+
+#### Front End
 
 ## License, Copyright, and Funding
 ----------------
