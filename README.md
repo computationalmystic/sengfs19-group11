@@ -51,6 +51,19 @@ You may now access your website at http://localhost:8080/home.html
 
 ### Testing
 #### Back End
+Function and route tests were written for all three new metrics.  To verify your functions are working correctly:
+1. Activate your virtual environment (ex: `source augur_env/bin/activate`)
+2. Navigate into the `sengfs19-group11` directory
+3. Run the tests for your desired metric:
+- committer-data: 
+1. `pytest augur/metrics/commit/test_commit_functions.py::test_committer_data`
+2. 
+- contributor-affiliation:
+1. `pytest augur/metrics/contributor/test_contributor_functions.py::test_contributor_affiliation`
+2. `pytest augur/metrics/contributor/test_contributor_routes.py::test_contributor_affiliation`
+- testing-coverage
+1. `pytest augur/metrics/insight/test_insight_functions.py::test_testing_coverage`
+2. `pytest augur/metrics/insight/test_insight_routes.py::test_testing_coverage`
 
 #### Front End
 1. The maps should populate with pins at contributor locations when opening the home page. Locations can be confirmed by viewing the contributors' city in the location API.
