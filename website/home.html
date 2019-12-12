@@ -15,6 +15,13 @@
             width: 100%;
             height: 50vh;            
         }
+        
+        #profile {
+            padding: 5px;
+            line-height: 50%;
+            background-color: white;
+            border: 1px solid black;
+        }
     </style>
     <script src="contributorData.js"></script>
     <script>
@@ -37,8 +44,40 @@
                 <div id="map2" class="center"></div>
             </div>
         </div>
+        <p id="load">Loading Table...</p>
+        <div class="row">
+            <div class="col mx-1">
+                <h3>Sample Repository Group One</h3>
+                <table class="dataTable" id="table10">
+                    <tr>
+                        <th class="dataTable">GitHub Username</th>
+                        <th class="dataTable">GitHub URL</th>
+                        <th class="dataTable">When Created</th>
+                        <th class="dataTable">Company</th>
+                        <th class="dataTable">Location</th>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col mx-1">
+                <h3>Sample Repository Group Two</h3>
+                <table class="dataTable" id="table20">
+                    <tr>
+                        <th class="dataTable">GitHub Username</th>
+                        <th class="dataTable">GitHub URL</th>
+                        <th class="dataTable">When Created</th>
+                        <th class="dataTable">Company</th>
+                        <th class="dataTable">Location</th>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         
     </div>
+    
     <script>
         getContrData(10);
         var locations1 = [

@@ -47,3 +47,7 @@ table.dataTable, th.dataTable, td.dataTable {
 p {
     text-align: center;
 }
+
+.container {
+    margin-bottom: 50px;
+}
