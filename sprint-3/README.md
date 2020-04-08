@@ -5,7 +5,7 @@
 - To view the api endpoints completed for sprint 3, you can go to http://129.114.16.76:5000/api/unstable/repo-groups/10/contributor-affiliation , http://129.114.16.76:5000/api/unstable/repo-groups/20/committer-data , and http://129.114.16.76:5000/api/unstable/repo-groups/20/testing-coverage ("20" within these links can be substitued for 10, the other sample repo group in the sample data).  This code is located in the "augur/metrics" directory in this repo.
 
 
-## Michelle
+## Michelle and Sweta
 - Originally had plans for repo groups in augur, but the data had other plans... We discovered that only sample data for three repo groups were available. Therefore, our options were to create a large amount of fake data or implement the three repo groups with existing APIs
 - Before the turn of events, I tranferred previous code to a bootstrap template, gathered logos for the repo groups, and created a layout for the data visualizations to be displayed.
 - Not many changes had to be made design wise at the last minute, just concepts
